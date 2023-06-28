@@ -19,7 +19,7 @@ export function Search() {
             id='search-container'
         >
 
-            <div className='w-2/3 flex justify-center flex-row gap-5 pl-3'>
+            <div className='w-2/3 flex justify-center flex-row gap-5 pl-3 max-[400px]:gap-3'>
                 <FaSearch className='text-8xl text-[#0175F7] flex justify-center max-[400px]:text-6xl' />
                 
                 <input 
