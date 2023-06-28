@@ -2,7 +2,7 @@
 
 export function Footer() {
     return (
-        <footer className="absolute bottom-5 flex justify-center items-center max-[650px]:text-xs max-[650px]:bottom-0">
+        <footer className="flex justify-center mt-5 items-center max-[650px]:text-xs max-[650px]:bottom-0">
             Made by &nbsp; 
             <a 
               className="font-bold cursor-pointer"
