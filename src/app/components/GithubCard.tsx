@@ -65,7 +65,7 @@ export function GithubCard() {
     <section 
       className={`w-5/12 min-w-[700px] min-h-[400px] shadow h-auto bg-[#1F2A48] rounded-xl flex justify-center items-center mt-5 p-10 
      ${githubProfile && !githubProfile.error ? ' transition-transform duration-75 hover:shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]' : ''}
-     max-[650px]:min-w-[350px] max-[650px]:p-5`}
+     max-[650px]:min-w-[350px] max-[650px]:p-5 max-[400px]:min-w-[300px]`}
       id="github-card"
       onMouseMove={e => onMouseMoveEffect(e)}
       onMouseOut={ onMouseOutEffect}
