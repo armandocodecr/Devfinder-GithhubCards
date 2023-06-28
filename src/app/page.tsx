@@ -6,7 +6,6 @@ export default function Home() {
     <main className="flex w-screen min-h-screen flex-col items-center justify-center">
       <Search />
       <GithubCard />
-      <Footer />
     </main>
   )
 }
