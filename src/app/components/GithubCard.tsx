@@ -1,65 +1,10 @@
 "use client";
-
-import { MouseEvent, useContext, useEffect, useState } from "react";
 import { CardInformationProfile, Stats, AdditionalInformatioProfile } from "./";
-import { GithubProfileContext } from "../context/GithubProfileContext";
+import { useCard } from "../hooks/useCard";
 
 export function GithubCard() {
-  const { githubProfile } = useContext(GithubProfileContext);
-  const avatar_default = "https://avatars.githubusercontent.com/u/69958471?v=4";
-  const [card, setCard] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const cardElement = document.getElementById('github-card');
-    setCard(cardElement);
-  }, []);
-
-  const onMouseMoveEffect = (e: MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
-
-    if(githubProfile && !githubProfile.error){
-
-      const { clientX, clientY } = e
   
-      const width = card?.clientWidth
-      const height = card?.clientHeight
-  
-      const yRotation = (
-        (clientX - width! / 2) / width!
-      ) * 20
-  
-      const xRotation = (
-        (clientY - height! / 1) / height!
-      ) * 20
-  
-      const string = `
-        perspective(1000px)
-        scale(1.01)
-        rotateX(${xRotation}deg)
-        rotateY(${yRotation}deg)
-      `
-  
-      if(card) card.style.transform = string
-
-    }
-
-  }
-
-  const onMouseOutEffect = () => {
-
-    if(githubProfile && !githubProfile.error){
-
-      const string = `
-        perspective(500px)
-        scale(1)
-        rotateX(0)
-        rotateY(0)
-      `
-  
-      if(card) card.style.transform = string
-
-    }
-
-  }
+  const { githubProfile, avatar_default, onMouseMoveEffect, onMouseOutEffect } = useCard()
 
   return (
     <section 
