@@ -14,7 +14,7 @@ export function CardInformationProfile({ avatar_url, name, login, bio, created_a
     return(
         <>
             <section className="w-full h-auto grid grid-cols-[200px_minmax(300px,_1fr)] 
-             grid-rows-2 max-[650px]:grid-cols-[130px_minmax(150px,_1fr)]"
+             grid-rows-2 max-[650px]:grid-cols-[130px_minmax(150px,_1fr)] max-[400px]:grid-cols-[120px_minmax(150px,_1fr)]"
             >
                 <Image 
                     className="object-cover col-start-1 col-end-1 row-span-full rounded-full max-[650px]:w-[100px] max-[650px]:row-end-2"
