@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en"> 
       <GithubProfileProvider>
-        <body className={`${inter.className} flex flex-col items-center`}>
+        <body className={`${inter.className} h-screen flex flex-col items-center justify-center`}>
           {children}
           <Footer />
         </body>
