@@ -5,7 +5,7 @@ import { GithubProfileContext } from '../context/GithubProfileContext';
 
 export function Search() {
 
-    const [inputSearch, setInputSearch] = useState('armandocodecr')
+    const [inputSearch, setInputSearch] = useState('')
     const { getGithubProfile } = useContext( GithubProfileContext )
 
     const getProfileData = async () => {
@@ -14,8 +14,8 @@ export function Search() {
 
     return (
         <div 
-            className='w-5/12 min-w-[700px] h-16 bg-[#1F2A48] rounded-xl pr-3 flex justify-between items-center flex-row gap-3
-            max-[650px]:min-w-[350px] max-[400px]:min-w-[300px]' 
+            className='w-5/12 min-w-[800px] h-16 bg-[#1F2A48] rounded-xl pr-3 flex justify-between items-center flex-row gap-3
+            max-[800px]:min-w-[650px] max-[650px]:min-w-[350px] max-[400px]:min-w-[300px]' 
             id='search-container'
         >
 

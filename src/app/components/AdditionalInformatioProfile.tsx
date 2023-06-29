@@ -11,7 +11,7 @@ export function AdditionalInformatioProfile({ location, blog, twitter_username, 
     
     return (
 
-        <div className="w-[73%] self-end mt-7 flex gap-10 max-[650px]:flex-col max-[650px]:self-start max-[650px]:gap-3 max-[400px]:w-[90%]">
+        <div className="w-[73%] self-end mt-7 flex gap-10 max-[800px]:w-[68%] max-[650px]:flex-col max-[650px]:self-start max-[650px]:gap-3 max-[400px]:w-[90%]">
              <div className="flex flex-col">
                  <div className="w-auto flex flex-row justify-center items-center gap-3 self-start">
                      <FaLocationArrow />
