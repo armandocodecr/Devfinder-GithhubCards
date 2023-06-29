@@ -1,6 +1,7 @@
 'use client'
-import { useContext, useState, useEffect, MouseEvent } from 'react';
+import { useContext, useState, useEffect, MouseEvent, useRef, useCallback } from 'react';
 import { GithubProfileContext } from "../context/GithubProfileContext";
+import { toPng } from 'html-to-image'
 
 
 export function useCard () {
@@ -8,11 +9,29 @@ export function useCard () {
   const { githubProfile } = useContext(GithubProfileContext);
   const avatar_default = "https://avatars.githubusercontent.com/u/69958471?v=4";
   const [card, setCard] = useState<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const cardElement = document.getElementById('github-card');
     setCard(cardElement);
   }, []);
+
+  const onDownloadCard = useCallback(() => {
+    if (ref.current === null) {
+      return
+    }
+
+    toPng(ref.current, { cacheBust: true, })
+      .then((dataUrl) => {
+        const link = document.createElement('a')
+        link.download = 'my-image-name.png'
+        link.href = dataUrl
+        link.click()
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [ref])
 
   const onMouseMoveEffect = (e: MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
 
@@ -65,10 +84,12 @@ export function useCard () {
     // variables
     githubProfile,
     avatar_default,
+    ref,
 
     //Methods
     onMouseMoveEffect,
-    onMouseOutEffect
+    onMouseOutEffect,
+    onDownloadCard
   }
 
 }
