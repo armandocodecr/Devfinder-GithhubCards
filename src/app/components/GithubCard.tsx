@@ -17,7 +17,7 @@ export function GithubCard() {
        max-[800px]:min-w-[650px] max-[650px]:min-w-[350px] max-[650px]:p-5 max-[400px]:min-w-[300px]`}
         id="github-card"
         onMouseMove={e => onMouseMoveEffect(e)}
-        onMouseOut={ onMouseOutEffect}
+        onMouseOut={onMouseOutEffect}
         ref={ref}
       >
         <article className="w-full h-auto flex flex-col items-center">
@@ -48,7 +48,7 @@ export function GithubCard() {
               </>
             ) : (
               <h1 className="text-4xl font-bold tracking-wide max-sm:text-xl">
-                  Usuario not found...
+                  Username not found...
               </h1>
             )
             
