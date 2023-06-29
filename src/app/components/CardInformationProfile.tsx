@@ -30,7 +30,7 @@ export function CardInformationProfile({ avatar_url, name, login, bio, created_a
                             <h2 className="text-2xl font-mono max-[650px]:text-xl max-[400px]:text-lg">{ name }</h2>
                             <p className="text-[#0175F7] font-light max-[650px]:text-sm max-[400px]:text-[13px]" >{ `@${ login }` }</p>
                         </div>
-                        <p className="font-mono text-slate-300 max-[650px]:text-sm max-[400px]:text-[12px]">{ `Joinded ${ formatDate( created_at ) }` }</p>
+                        <p className="font-mono text-slate-300 max-[650px]:text-sm max-[400px]:text-[12px]">{ `Joined ${ formatDate( created_at ) }` }</p>
                     </div>
                 </div>
 
