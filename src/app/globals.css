@@ -20,3 +20,61 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #141C30;
 }
+
+.download-btn {
+  padding: 12px 25px;
+  align-self: flex-end;
+  border: unset;
+  border-radius: 15px;
+  margin-top: 20px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+ 
+ .download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #1F2A48;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+ 
+ .download-btn:hover {
+  color: #e8e8e8;
+ }
+ 
+ .download-btn:hover::before {
+  width: 100%;
+ }
+
+ @media screen and ( max-width: 800px ) {
+
+  .download-btn{
+    align-self: center;
+  }
+
+ }
+
+ @media screen and ( max-width: 400px ) {
+
+  .download-btn{
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+ }
