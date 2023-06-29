@@ -20,11 +20,10 @@ export function useCard () {
     if (ref.current === null) {
       return
     }
-
     toPng(ref.current, { cacheBust: true, })
       .then((dataUrl) => {
         const link = document.createElement('a')
-        link.download = 'my-image-name.png'
+        link.download = 'YourGithubCard.png'
         link.href = dataUrl
         link.click()
       })
