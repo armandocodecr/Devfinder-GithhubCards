@@ -1,8 +1,7 @@
 "use client";
-import { toPng } from 'html-to-image'
-import { useCallback, useRef } from 'react';
 import { CardInformationProfile, Stats, AdditionalInformatioProfile } from "./";
 import { useCard } from "../hooks/useCard";
+import { DownloadButton } from "./UI";
 
 export function GithubCard() {
   
@@ -62,12 +61,7 @@ export function GithubCard() {
 
      {
       githubProfile && !githubProfile.error && (
-        <button 
-          className='download-btn'
-          onClick={onDownloadCard}
-        >
-          Get your GithubCard
-        </button>
+        <DownloadButton onDownloadCard={ onDownloadCard } />
       )
      }
     </section>
