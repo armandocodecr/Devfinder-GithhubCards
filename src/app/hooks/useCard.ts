@@ -23,14 +23,14 @@ export function useCard () {
     toPng(ref.current, { cacheBust: true, })
       .then((dataUrl) => {
         const link = document.createElement('a')
-        link.download = 'YourGithubCard.png'
+        link.download =  `GithubCard-${ githubProfile?.name }.png`
         link.href = dataUrl
         link.click()
       })
       .catch((err) => {
         console.log(err)
       })
-  }, [ref])
+  }, [ref, githubProfile])
 
   const onMouseMoveEffect = (e: MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
 
