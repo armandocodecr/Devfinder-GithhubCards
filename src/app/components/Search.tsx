@@ -12,6 +12,12 @@ export function Search() {
         await getGithubProfile(inputSearch)
     }
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            getProfileData()
+        }
+    }
+
     return (
         <div 
             className='w-5/12 min-w-[800px] h-16 bg-[#1F2A48] rounded-xl pr-3 flex justify-between items-center flex-row gap-3
@@ -26,6 +32,7 @@ export function Search() {
                     autoComplete='off'
                     type="text" 
                     onChange={e => setInputSearch( e.target.value )}
+                    onKeyDown={e => handleKeyDown(e)}
                     name="search"
                     className="w-screen font-mono bg-transparent outline-none max-sm:text-sm max-[400px]:text-[11px]"
                     placeholder="Search Github username..."
