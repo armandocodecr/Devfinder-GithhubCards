@@ -6,14 +6,22 @@ import { GithubProfileContext } from '../context/GithubProfileContext';
 export function Search() {
 
     const [inputSearch, setInputSearch] = useState('')
+    const [prevInputSearch, setPrevInputSearch] = useState('')
     const { getGithubProfile } = useContext( GithubProfileContext )
 
     const getProfileData = async () => {
         await getGithubProfile(inputSearch)
+        setPrevInputSearch(inputSearch)
     }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && inputSearch !== prevInputSearch) {
+            getProfileData()
+        }
+    }
+
+    const handleClick = () => {
+        if (inputSearch !== prevInputSearch) {
             getProfileData()
         }
     }
@@ -41,7 +49,7 @@ export function Search() {
 
             <button 
                 className='bg-[#0175F7] rounded-2xl h-12 w-28 font-mono max-sm:h-10 max-[400px]:h-8 max-[400px]:text-[12px] disabled:opacity-50 disabled:cursor-not-allowed'
-                onClick={ () => getProfileData() }
+                onClick={ handleClick }
                 disabled={ inputSearch.length === 0 }
             >Search</button>
         </div>
