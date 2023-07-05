@@ -13,7 +13,13 @@ export const GithubProfileProvider: FC<Props> = ({ children }) => {
 
     const getGithubProfile = async ( username: string ) => {
         try {
-            const data: IGithubUserData = await fetch(`https://api.github.com/users/${username}`).then(res => res.json())
+            const data: IGithubUserData = await fetch(`https://api.github.com/users/${username}`,{
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${process.env.NEXT_PUBLIC_GITHUB_PROFILE}`
+                }
+            }).then(res => res.json())
             if(data.message) data.error = true
             setGithubProfile(data)
 
